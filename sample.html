@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Interactive Drum Kit</title>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      height: 100vh;
+      background: #111;
+    }
+    h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    background: linear-gradient(90deg, #FFD700, #FFEB3B );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.7)
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+    /*border: 2px solid #ff4b1f;*/
+  }
+    .drum-container {
+      position: relative;
+      width: 800px;  /* Adjust to your base image width */
+    }
+    .drum-container img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: auto;
+      cursor: pointer;
+    }
+    .base {
+      position: relative;
+      z-index: -1;
+      pointer-events: none; /* background doesn't block clicks */
+    }
+    .forclick {
+      z-index: 2;
+      transition: transform 0.1s ease;
+    }
+
+    .kick{
+        z-index: -2;
+    }
+
+    .play{
+        
+        transform: scale(1.1);
+        
+    }
+    .title-container {
+        border: 2px solid #FFD700;
+        padding: 5px 10px;
+        border-radius: 8px;
+        display: inline-block; 
+        padding-inline: 50px;
+    }
+
+  </style>
+</head>
+<body>
+
+    <div class="title-container">
+        <h1>The Desktop Drummer</h1>
+    </div>
+  <div class="drum-container">
+    <!-- Base drum kit -->
+    <img src="ChatGPT Image Sep 2, 2025, 06_57_39 PM.png" alt="Drum Set" class="base">
+
+    <!-- Overlays (all aligned at 0,0 since they match base image) -->
+    <div data-key="74" class="forclick"><img src="snare.png" class="overlay" ></div>
+    <div data-key="65" class="forclick"><img src="boom.png" class="overlay" ></div>
+    <div data-key="76" class="forclick"><img src="tom.png" class="overlay" ></div>
+    <div data-key="72" class="forclick"><img src="ride.png" class="overlay" ></div>
+    <div data-key="70" class="forclick"><img src="kick.png" class="kick overlay" ></div>
+    <div data-key="71" class="forclick"><img src="openhat.png" class="overlay" ></div>
+    <div data-key="68" class="forclick"><img src="hithat.png" class="overlay" ></div>
+    <div data-key="83" class="forclick"><img src="clap.png" class="overlay" ></div>
+    <div data-key="75" class="forclick"><img src="tink.png" class="overlay" ></div>
+  </div>
+    <audio data-key="65" src="sound/boom.wav"></audio>
+    <audio data-key="83" src="sound/clap.wav"></audio>
+    <audio data-key="68" src="sound/hihat.wav"></audio>
+    <audio data-key="70" src="sound/kick.wav"></audio>
+    <audio data-key="71" src="sound/openhat.wav"></audio>
+    <audio data-key="72" src="sound/ride.wav"></audio>
+    <audio data-key="74" src="sound/snare.wav"></audio>
+    <audio data-key="75" src="sound/tink.wav"></audio>
+    <audio data-key="76" src="sound/tom.wav"></audio>
+    <script src="script.js"></script>
+  
+</body>
+</html>
