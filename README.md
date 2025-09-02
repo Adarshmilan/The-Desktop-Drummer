@@ -1,4 +1,4 @@
-The Desktop Drummer
+
 The Desktop Drummer is a simple, interactive web application that transforms your keyboard into a dynamic drum kit. You can play virtual drums and cymbals by pressing the corresponding keys on your keyboard, making it a fun and accessible tool for creating rhythms.
 
 Features
